@@ -1,0 +1,356 @@
+* {
+    padding: 0px;
+    margin: 0px;
+    box-sizing: border-box;
+    --page-font: 'Source Sans Pro', sans-serif;
+    --font-color: white;
+}
+
+html, body {
+    width: 100%;
+    height: 100vh;
+    font-family: var(--page-font)
+}
+
+.container {
+    display: grid;
+    height: 100%;
+    grid-template-columns: 1fr 4fr;
+    grid-template-rows: 1fr 6fr;
+}
+
+.sidebar {
+    grid-column: 1;
+    grid-row: 1/ -1;
+    background-color: #1992d4;
+    color: var(--font-color);
+    justify-items: center;
+    min-width: 250px;
+    z-index: 2;
+}
+
+.header {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    grid-template-rows: 1fr 1fr;
+}
+
+.search {
+    display: grid;
+    grid-template-columns: auto, 1fr;
+}
+
+.logo-container {
+    width: auto;
+    display: grid;
+    justify-content: start;
+    align-items: center;
+    grid-template-columns: auto auto;
+    padding-top: 1.5rem;
+    padding-left: calc(0.7rem + 2vw)
+}
+
+.logo-container svg{
+    fill: currentcolor;
+    justify-self: end;
+}
+
+.logo-container p {
+    font-size: 1.6rem;
+    font-weight: 700;
+}
+
+svg {
+    height: auto;
+    width: auto;
+}
+
+.nav {
+   display: grid;
+   justify-items: start;
+   padding-left: calc(1.5rem + 2.5vw);
+}
+
+.nav a {
+    display: inline-block;
+    text-decoration-line: none;
+    color: white;
+}
+
+.nav a:hover {
+    text-decoration: underline;
+    text-decoration-thickness: 3px;
+}
+
+.nav ul {
+    display: grid;
+    justify-content: start;
+    margin-top: 2rem;
+    list-style: none;
+}
+
+.nav ul > li {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    justify-items: start;
+    padding: 1rem 0;
+    font-size: larger;
+    font-weight: 500;
+    vertical-align:bottom;
+}
+
+.nav img {
+    height: 1.5rem;
+    align-self: baseline;
+    justify-items:end;
+    padding-right: 0.8rem;
+    display: inline;
+    vertical-align: bottom;
+}
+
+.main {
+    background-color: #eee;
+}
+
+.search {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    align-items: center;
+    padding: 0 calc(1rem + 2vw);
+    cursor: pointer;
+}
+
+.search img {
+    height: 2rem;
+    align-self: baseline;
+    margin: 3px 0.5rem 0 0 ;
+}
+
+.search input {
+    width: 80%;
+    height: 1.8rem;
+    border-radius: 1rem;
+    border: 1px solid #e2e8f0;
+    padding: 2ch;
+    background-color: #e2e8f0;
+}
+
+.header {
+    display: grid;
+    grid-template-columns: 2.5fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    box-shadow: 1px 7px 12px -5px rgba(0,0,0,0.33);
+    -webkit-box-shadow: 1px 7px 12px -5px rgba(0,0,0,0.33);
+    -moz-box-shadow: 1px 7px 12px -5px rgba(0,0,0,0.33);
+    z-index: 1;
+}
+
+.welcome {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    grid-template-rows: 1fr 1.5fr;
+    padding: 0rem 0 1rem calc(1rem + 2vw);
+}
+
+.userinfo {
+    font-size: 1.5rem;
+    font-weight: 700;
+    padding-right: 2rem;
+}
+
+.welcome .avatar {
+    grid-row: 1 / -1;
+}
+
+.welcome img {
+    height: 5rem;
+    padding: 0 1rem 0 0;
+}
+
+.welcome > div:nth-child(2){
+    display: grid;
+    font-size: 0.85rem;
+    font-weight: 600;
+    letter-spacing: 0.2ch;
+    align-items: end;
+}
+
+.user {
+    display: grid;
+    grid-template-columns: auto auto 1fr;
+    gap: 2rem;
+    align-items: center;
+    font-size: 1.2rem;
+    font-weight: 700;
+    padding-right: 3rem;
+    justify-self: end;
+}
+
+.user > .avatar img {
+    height: 3.5rem;
+}
+
+.notification img {
+    height: 2rem;
+    cursor:pointer;
+    transition: transform .1s;
+}
+
+.notification img:hover {
+    transform: scale(1.1);
+}
+.notification::after{
+    content: "2";
+    color: rgb(241, 58, 58);
+}
+
+.options button {
+    height: 2.5rem;
+    width: 6rem;
+    border-radius: 1.25rem;
+    border-style: none;
+    background-color: #1992d4;
+    font-style: var(--page-font);
+    color: white;
+    font-size: 0.8rem;
+    font-weight: bold;
+}
+
+.options button:hover {
+    cursor:pointer;
+    background-color: #39a2db;
+}
+
+
+.options {
+    display: grid;
+    grid-template-columns: auto auto auto;
+    align-items: center;
+    padding-right: 3rem;
+    justify-self: end;
+    gap: calc(0.3rem + 1.5vw);
+}
+
+.main {
+    display: grid;
+    grid-template-columns: 3fr minmax(300px, 1fr);
+    padding: 1.5rem;
+    background-color: #e2e8f0;
+}
+
+.main h3 {
+    padding: 0.5rem 0;
+}
+
+.card-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(400px, auto));
+    /* grid-template-rows: minmax(250px, auto); */
+    gap: 1.5rem
+}
+
+.card {
+    display: grid;
+    position: relative;
+    background-color: white;
+    border-radius: 0.6rem;
+    height: 250px;
+    padding: 2rem 2.5rem;
+    box-shadow: 1px 7px 12px -5px rgba(0,0,0,0.33);
+    -webkit-box-shadow: 1px 7px 12px -5px rgba(0,0,0,0.33);
+    -moz-box-shadow: 1px 7px 12px -5px rgba(0,0,0,0.33);
+}
+
+.card p {
+    color: #555;
+}
+
+.card::before{
+    position: absolute;
+    top: 0px;
+    left:0px;
+    content: ' ';
+    display: block;
+    background-color: #f0b429;
+    height: 100%;
+    width: 2.5%;
+    border-top-left-radius: 0.6rem;
+    border-bottom-left-radius: 0.6rem;
+}
+
+.project-options {
+    display: grid;
+    justify-self: end;
+    align-self: end;
+    grid-template-columns: auto auto auto;
+    gap: 1rem;
+    cursor: pointer;
+}
+
+.project-options img {
+    transition: transform .05s;
+}
+
+.project-options img:hover {
+    transform: scale(1.1);
+}
+
+.project-options img {
+    height: 1.7rem;
+}
+
+.sidebar-others {
+    display: grid;
+    grid-template-rows: auto auto;
+    padding: 0 0.5rem 0 1.5rem;
+    row-gap: 1rem;
+    align-content: start;
+}
+
+.others, .trending > div {
+    display: grid;
+    align-items: center;
+    background-color: white;
+    padding: 1.5rem;
+    border-radius: 0.6rem;
+    box-shadow: 1px 7px 12px -5px rgba(0,0,0,0.33);
+    -webkit-box-shadow: 1px 7px 12px -5px rgba(0,0,0,0.33);
+    -moz-box-shadow: 1px 7px 12px -5px rgba(0,0,0,0.33);
+    row-gap: 1rem;
+}
+
+.others p {
+    font-size: 0.8rem;
+    color: #555
+}
+
+.others h5 {
+    padding: 0.2rem 0;
+}
+
+.others hr {
+    height: 0.5px;
+    color: #eee;
+}
+
+.trending > div {
+    display: grid;
+    grid-template-rows: repeat(4, 1fr);
+}
+
+.trending img {
+    height: 3rem;
+}
+
+.trending > div > div {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    align-items: center;
+    gap :0.5rem;
+    font-size: smaller;
+}
+
+.trending p:hover {
+    text-decoration: underline;
+    cursor: pointer;
+}
